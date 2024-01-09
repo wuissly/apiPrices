@@ -11,5 +11,5 @@ import lombok.*;
 public class ErrorDetail {
 
     private String code;
-    private String mensaje;
+    private String message;
 }

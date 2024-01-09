@@ -3,10 +3,11 @@ package api.challenge.apiPrices.domain.ports;
 import api.challenge.apiPrices.infrastructure.repository.h2.PriceEntity;
 import org.springframework.stereotype.Component;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Component
 public interface PriceRepository {
 
-    PriceEntity getPrice (Long brandId, Integer productId, Timestamp date);
+    List<PriceEntity> getPrice (Long brandId, Integer productId, LocalDateTime date);
 }

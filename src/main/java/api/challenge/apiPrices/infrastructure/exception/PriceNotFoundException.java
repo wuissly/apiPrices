@@ -2,19 +2,19 @@ package api.challenge.apiPrices.infrastructure.exception;
 
 public class PriceNotFoundException extends RuntimeException {
 
-    private final String codigo;
-    private final String descripcion;
+    private final String code;
+    private final String description;
 
-    public PriceNotFoundException(String codigo, String descripcion) {
-        this.codigo=codigo;
-        this.descripcion=descripcion;
+    public PriceNotFoundException(String code, String description) {
+        this.code=code;
+        this.description=description;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getCode() {
+        return code;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getDescription() {
+        return description;
     }
 }
