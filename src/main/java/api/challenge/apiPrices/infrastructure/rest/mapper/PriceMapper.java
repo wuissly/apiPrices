@@ -17,7 +17,10 @@ public interface PriceMapper {
     @Mapping(expression = "java(price.get().getStartDate())", target = "startDate",dateFormat = "yyyy-MM-dd'-'HH.mm.ss")
     @Mapping(expression = "java(price.get().getEndDate())", target = "endDate",dateFormat = "yyyy-MM-dd'-'HH.mm.ss")
     @Mapping(expression = "java(price.get().getPrice())", target = "price",numberFormat = "0.00")
-    Price priceToPriceResponse(Optional<PriceEntity> price);
+    @Mapping(expression = "java(price.get().getCurr())", target = "curr")
+    Price priceEntityToPriceResponse(Optional<PriceEntity> price);
+
+
 
 
 }

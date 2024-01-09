@@ -28,7 +28,7 @@ public class DomainPriceService implements PriceService {
         Optional<PriceEntity> priceOptional = Optional.ofNullable(priceRepository.getPrice(brandId, productId, parseToTimestamp(date)));
         if (!priceOptional.isPresent())
             throw new PriceNotFoundException(Constants.CODE_NOT_FOUND,Constants.DESCRIPTION_NOT_FOUND);
-        Price priceResponse= mapper.priceToPriceResponse(priceOptional);
+        Price priceResponse= mapper.priceEntityToPriceResponse(priceOptional);
         return  priceResponse;
     }
 

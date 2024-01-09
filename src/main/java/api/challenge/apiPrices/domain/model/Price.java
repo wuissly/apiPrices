@@ -1,16 +1,16 @@
 package api.challenge.apiPrices.domain.model;
 
-import api.challenge.apiPrices.infrastructure.repository.h2.GroupEntity;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.sql.Timestamp;
 
 
 @Data
 @Builder
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Price {
 
     @Id
@@ -21,7 +21,8 @@ public class Price {
     private Timestamp endDate;
     private Integer priceList;
     private Integer productId;
-    private Integer priority;
     private Double price;
     private String curr;
+
+
 }
