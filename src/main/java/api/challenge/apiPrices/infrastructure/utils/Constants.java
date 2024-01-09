@@ -1,4 +1,4 @@
-package com.challenge.plataforma.infrastructure.utils;
+package api.challenge.apiPrices.infrastructure.utils;
 
 public class Constants {
 

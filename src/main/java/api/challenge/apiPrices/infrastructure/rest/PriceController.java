@@ -6,7 +6,7 @@ import api.challenge.apiPrices.application.service.PriceService;
 
 import api.challenge.apiPrices.domain.model.Price;
 import api.challenge.apiPrices.infrastructure.exception.PriceNotFoundException;
-import com.challenge.plataforma.infrastructure.utils.Constants;
+import api.challenge.apiPrices.infrastructure.utils.Constants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -36,15 +36,15 @@ public class PriceController {
     @Operation(summary = "get by date, Product_id and brandId")
     @Validated
     public ResponseEntity<Price> getPrice(
-            @Parameter(description = "Fecha de aplicación, yyyy-MM-dd HH:mm:ss") @PathVariable("date")
+            @Parameter(description = "date, yyyy-MM-dd HH:mm:ss") @PathVariable("date")
             @NotBlank(message = Constants.BAD_REQUEST_DATE) String date,
-            @Parameter(description = "Id de producto") @PathVariable("productId")
+            @Parameter(description = "productId") @PathVariable("productId")
             @NotBlank(message = Constants.BAD_REQUEST_PRODUCT_ID) Integer productId,
-            @Parameter(description = "Id de brand") @PathVariable("brandId")
+            @Parameter(description = "brandId") @PathVariable("brandId")
             @NotBlank(message = Constants.BAD_REQUEST_BRAND_ID) Long brandId
     ) throws PriceNotFoundException {
 
-        log.info("request param -> [date:{}], [productId: {}], [brandid: {}]", date,productId,brandId);
+        log.info("request params -> [date:{}], [productId: {}], [brandid: {}]", date,productId,brandId);
         var response = priceService.getPrice(date,productId,brandId);
         log.info("response {}", response);
 

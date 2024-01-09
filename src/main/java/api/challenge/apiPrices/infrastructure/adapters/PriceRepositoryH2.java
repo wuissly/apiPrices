@@ -4,9 +4,9 @@ package api.challenge.apiPrices.infrastructure.adapters;
 import api.challenge.apiPrices.domain.ports.PriceRepository;
 import api.challenge.apiPrices.infrastructure.repository.h2.PriceEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Component
 public class PriceRepositoryH2 implements PriceRepository {
@@ -19,8 +19,8 @@ public class PriceRepositoryH2 implements PriceRepository {
     }
 
     @Override
-    public PriceEntity getPrice(Long brandId, Integer productId, Timestamp date) {
-        return priceRepositoryPersist.findFisrt(brandId,productId,date);
+    public List<PriceEntity> getPrice(Long brandId, Integer productId, LocalDateTime date) {
+        return priceRepositoryPersist.findAll(brandId,productId,date);
     }
     
     

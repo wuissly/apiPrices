@@ -6,7 +6,7 @@ import lombok.*;
 
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Setter
 @Getter
@@ -28,11 +28,11 @@ public class PriceEntity implements Serializable {
 
     @NotNull
     @Column(name = "start_date")
-    private Timestamp startDate;
+    private LocalDateTime startDate;
 
     @NotNull
     @Column(name = "end_date")
-    private Timestamp endDate;
+    private LocalDateTime endDate;
 
     @NotNull
     @Column(name = "price_list")

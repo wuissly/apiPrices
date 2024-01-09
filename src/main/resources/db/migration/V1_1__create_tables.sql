@@ -13,7 +13,7 @@ price_list BIGINT not null,
 product_id BIGINT not null,
 priority Integer not null,
 price NUMERIC(20, 2) not null,
-curr CHAR(5) not null,
+curr VARCHAR(5) not null,
 PRIMARY KEY (id),
 FOREIGN KEY (brand_id) REFERENCES grupo(id)
 );
