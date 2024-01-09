@@ -15,7 +15,7 @@ public class OpenApiConfig {
         return new OpenAPI()
                 .info(new Info()
                         .title("Prices API")
-                        .description("Challenge - busqueda de producto/precio")
+                        .description("Challenge - find product/price")
                         .contact(new Contact().email("wuissly.guzman@gmail.com").name("Wuissly Guzmán"))
                         .version("1.0")
                 );

@@ -25,9 +25,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/challenge", produces = MediaType.APPLICATION_JSON_VALUE)
 @Tag(name = "Price", description = "Product prices")
 public class PriceController {
-
     private final PriceService priceService;
-
     @Autowired
     public PriceController(PriceService priceService) {
         this.priceService = priceService;
@@ -38,7 +36,7 @@ public class PriceController {
     @Operation(summary = "get by date, Product_id and brandId")
     @Validated
     public ResponseEntity<Price> getPrice(
-            @Parameter(description = "Fecha de aplicación, yyyy-MM-dd HH:mm:ss") @PathVariable("fecha")
+            @Parameter(description = "Fecha de aplicación, yyyy-MM-dd HH:mm:ss") @PathVariable("date")
             @NotBlank(message = Constants.BAD_REQUEST_DATE) String date,
             @Parameter(description = "Id de producto") @PathVariable("productId")
             @NotBlank(message = Constants.BAD_REQUEST_PRODUCT_ID) Integer productId,
@@ -46,7 +44,7 @@ public class PriceController {
             @NotBlank(message = Constants.BAD_REQUEST_BRAND_ID) Long brandId
     ) throws PriceNotFoundException {
 
-        log.info("request parametros -> [fecha:{}], [productId: {}], [brandid: {}]", date,productId,brandId);
+        log.info("request param -> [date:{}], [productId: {}], [brandid: {}]", date,productId,brandId);
         var response = priceService.getPrice(date,productId,brandId);
         log.info("response {}", response);
 
