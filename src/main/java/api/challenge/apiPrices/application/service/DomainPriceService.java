@@ -13,6 +13,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,7 +44,7 @@ public class DomainPriceService implements PriceService {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             dateOut = LocalDateTime.parse(dateIn, formatter);
-        } catch (IllegalArgumentException e) {
+        } catch (DateTimeParseException e) {
             throw new InvalidDateException(Constants.INVALID_DATE,Constants.DESCRIPTION_INVALID_DATE);
         }
         return dateOut;

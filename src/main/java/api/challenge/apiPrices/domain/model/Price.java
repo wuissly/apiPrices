@@ -13,15 +13,12 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class Price {
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO )
-    private Long id;
+
     private Long brandId;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
     private Integer priceList;
     private Integer productId;
     private Double price;
-    private String curr;
 
 }
