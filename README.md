@@ -8,12 +8,12 @@ Desarrollo de endPoint para obtener los datos de la consulta solicitada por 3 pa
 Y devolviendo la respuesta en el siguiente objeto:
 ```
 {
-"productId": 0,
-"brandId": 0,
-"priceList": 0,
-"startDate": "2023-03-12.16.08.00",
-"endDate": "2023-03-12.16.08.00",
-"price": 0
+"productId": 35455,
+"brandId": 1,
+"priceList": 2,
+"startDate": "2024-01-10.16.08.00",
+"endDate": "2024-01-10.16.08.00",
+"price": 9.99
 }
 ```
 
