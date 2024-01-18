@@ -33,7 +33,7 @@ public class PriceController {
 
     @GetMapping(path = "/{date}/{productId}/{brandId}")
     @ResponseStatus(value = HttpStatus.OK)
-    @Operation(summary = "get by date, Product_id and brandId")
+    @Operation(summary = "get by date, ProductId and brandId")
     @Validated
     public ResponseEntity<Price> getPrice(
             @Parameter(description = "date, yyyy-MM-dd HH:mm:ss") @PathVariable("date")
@@ -44,7 +44,7 @@ public class PriceController {
             @NotBlank(message = Constants.BAD_REQUEST_BRAND_ID) Long brandId
     ) throws PriceNotFoundException {
 
-        log.info("request params -> [date:{}], [productId: {}], [brandid: {}]", date,productId,brandId);
+        log.info("request params -> [date:{}], [productId: {}], [brandId: {}]", date,productId,brandId);
         var response = priceService.getPrice(date,productId,brandId);
         log.info("response {}", response);
 
